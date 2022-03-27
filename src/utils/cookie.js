@@ -1,6 +1,5 @@
 const setCookie = (name, value) => {
     let d = new Date();
-    debugger;
     const exdays = 1;
     d.setDate(d.getDate() + (exdays * 24 * 60 * 60 * 1000))
     let expires = "expires=" + d.toUTCString();

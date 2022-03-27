@@ -14,14 +14,14 @@ import { Dashboard } from "./components/dashboard/dashboard";
 export default function App() {
   return (
     <Router>
-      <div className="">
+      <div>
         <Routes>
           <Route path="/" element={<Login />}>
           </Route>
           <Route path="/dashboard" element={<Dashboard />}>
           </Route>
-          <Route path="/dashboard" element={<Dashboard />}>
-          </Route>
+          {/* <Route path="/dashboard" element={<Dashboard />}>
+          </Route> */}
         </Routes>
       </div>
     </Router>

@@ -14,7 +14,7 @@ export const Login = () => {
 
 	const checkLogin = async () => {
 		if (validateUser(username, password)) {
-			const a = await fetch('https://www.uuidgenerator.net/api/version1')
+			const a = await fetch(process.env.REACT_APP_GUID_EXTERNAL_URI)
 				.then(res => res.text())
 				.then(res => {
 					if (res) {
@@ -35,7 +35,7 @@ export const Login = () => {
 	}
 
 	return (
-		<div className="card offset-3 mt-5 col-md-6">
+		<div className="card offset-3 col-md-6" style={{ top: "12em" }}>
 			<div className="card-body">
 				<form>
 					<div className="mb-3">
@@ -66,7 +66,7 @@ export const Login = () => {
 							onChange={(e) => setPassword(e.target.value)}
 						/>
 					</div>
-					<div className="mb-3 form-check">
+					{/* <div className="mb-3 form-check">
 						<input
 							type="checkbox"
 							className="form-check-input"
@@ -75,7 +75,7 @@ export const Login = () => {
 						<label className="form-check-label" htmlFor="exampleCheck1">
 							Check me out
 						</label>
-					</div>
+					</div> */}
 					<button
 						type="button"
 						onClick={checkLogin}
@@ -86,7 +86,6 @@ export const Login = () => {
 					<Alert class="warning" show={credNotMatch} msg='Username or password is invalid.' ></Alert>
 				</form>
 			</div>
-			<Footer></Footer>
 		</div>
 	);
 };
