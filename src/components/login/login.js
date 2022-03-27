@@ -83,7 +83,7 @@ export const Login = () => {
 					>
 						Submit
 					</button>
-					<Alert class="warning" show={credNotMatch} ></Alert>
+					<Alert class="warning" show={credNotMatch} msg='Username or password is invalid.' ></Alert>
 				</form>
 			</div>
 			<Footer></Footer>
